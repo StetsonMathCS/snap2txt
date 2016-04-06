@@ -1,7 +1,9 @@
-nap2txt
+snap2txt
 
 Installation Process: 
+  
   brew tap homebrew/science
+  
   brew install opencv3
   
 Description:
