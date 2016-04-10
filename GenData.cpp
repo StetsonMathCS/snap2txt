@@ -1,5 +1,4 @@
 // GenData.cpp
-
 #include<opencv2/core/core.hpp>
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv2/imgproc/imgproc.hpp>
@@ -39,7 +38,7 @@ int main() {
                                'U', 'V', 'W', 'X', 'Y', 'Z' };
     std::vector<int> intValidChars(&intValidCharsArr[0], &intValidCharsArr[0]+36);
 
-    imgTrainingNumbers = cv::imread("training_chars.png");          // read in training numbers image
+    imgTrainingNumbers = cv::imread("fonts.png");          // read in training numbers image 
 
     if (imgTrainingNumbers.empty()) {                               // if unable to open image
         std::cout << "error: image not read from file\n\n";         // show error message on command line
