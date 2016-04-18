@@ -10,24 +10,24 @@ int main() {
     int retval; // for checking function return values, for error codes
 
     // open the database, creating the file if it doesn't exist
-    retval = sqlite3_open("test.db", &db);
+    retval = sqlite3_open("snaps.db", &db);
     if(retval != 0)
     {
-        cout << "Cannot open test.db: " << sqlite3_errcode(db) << endl;
+        cout << "Cannot open snaps.db: " << sqlite3_errcode(db) << endl;
         exit(1);
     }
     cout << "Successfully opened." << endl;
 
     cout << "Creating a table..." << endl;
     char *errmsg;
-    retval = sqlite3_exec(db, "CREATE TABLE mytable (id int, val text, x double);", NULL, NULL, &errmsg);
+    retval = sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS snaps (filename text PRIMARY KEY, exText text, date text);", NULL, NULL, &errmsg);
     if(retval != SQLITE_OK)
     {
         cout << "Error in previous command: " << errmsg << endl;
         sqlite3_free(errmsg);
     }
 
-    retval = sqlite3_exec(db, "INSERT INTO mytable VALUES (1, \"hello\", 2.1), (2, \"goodbye\", -0.3);", NULL, NULL, &errmsg);
+    retval = sqlite3_exec(db, "INSERT OR REPLACE INTO snaps VALUES (\"cats\", \"hello\", \"April 15, 2016\"), (\"dogs\", \"GoodBye\", \"May 9, 2016\");", NULL, NULL, &errmsg);
     if(retval != SQLITE_OK)
     {
         cout << "Error in previous command: " << errmsg << endl;
@@ -36,7 +36,7 @@ int main() {
 
     // SELECT queries
     sqlite3_stmt *s;
-    const char *sql = "SELECT * FROM mytable ORDER BY id";
+    const char *sql = "SELECT * FROM snaps ORDER BY date";
     retval = sqlite3_prepare(db, sql, strlen(sql), &s, NULL);
     if(retval != SQLITE_OK)
     {
@@ -44,10 +44,10 @@ int main() {
     }
     while(sqlite3_step(s) == SQLITE_ROW)
     {
-        int id = sqlite3_column_int(s, 0);
-        const unsigned char *val = sqlite3_column_text(s, 1);
-        double x = sqlite3_column_double(s, 2);
-        cout << "ID = " << id << ", val = " << val << ", x = " << x << endl;
+        const unsigned char *filename = sqlite3_column_text(s, 0);
+        const unsigned char *exText = sqlite3_column_text(s, 1);
+        const unsigned char *date = sqlite3_column_text(s, 2);
+        cout << "filename = " << filename << ", extracted text = " << exText << ", date = " << date << endl;
     }
     sqlite3_finalize(s);
 
