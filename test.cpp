@@ -33,10 +33,10 @@ int main() {
 
 		cv::Mat thresh;
 		cv::adaptiveThreshold(gray, thresh, 255,
-		cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY_INV, 11, 2);
+		cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY_INV, 3, 0);
 		
 		//saving the frame from the webcam
-		imwrite("test.jpg", cameraFrame);
+		imwrite("test.jpg", gray);
 		PIX *pixs = pixRead("test.jpg");
 		//This will send an image for tesseract to extract the text off of it 
 		myOCR->SetImage(pixs);
@@ -46,6 +46,7 @@ int main() {
 		//print the text from the image to the counsle 
 		std::cout << text << std::endl;
 		//this will display the webcam to the user
+		
 		imshow("cam", cameraFrame);
     }
 
