@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Example2KimKathryn.cpp" />
+    <ClCompile Include="Example3KimKathryn.cpp" />
+    <ClCompile Include="ExampleKimKathryn.cpp" />
+    <ClCompile Include="GenData.cpp" />
+    <ClCompile Include="TrainAndTest.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CA4E76D8-33A0-47C8-B2BF-BA2D8DFAF9F3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -144,9 +151,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="GenData.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
