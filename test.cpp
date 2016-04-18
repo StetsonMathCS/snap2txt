@@ -31,8 +31,9 @@ int main() {
 		cv::Mat gray;
 		cv::cvtColor(cameraFrame, gray, CV_BGR2GRAY);
 
-		cv::Mat persTrans;
-			
+		cv::Mat thresh;
+		cv::adaptiveThreshold(gray, thresh, 255,
+		cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY_INV, 11, 2);
 		
 		//saving the frame from the webcam
 		imwrite("test.jpg", cameraFrame);
