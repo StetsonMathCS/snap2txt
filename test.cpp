@@ -27,26 +27,25 @@ int main() {
         if(cv::waitKey(30) >= 0) break;
 		cv::Mat cameraFrame;
 		camera >> cameraFrame;
-		
+		//Creates a Grayscale matrix
 		cv::Mat gray;
 		cv::cvtColor(cameraFrame, gray, CV_BGR2GRAY);
-
+		//Changes Grayscale matrix black/white
 		cv::Mat thresh;
-		cv::adaptiveThreshold(gray, thresh, 255,
-		cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY_INV, 3, 0);
+		cv::adaptiveThreshold(gray, thresh, 255, cv::ADAPTIVE_THRESH_MEAN_C, cv::THRESH_BINARY_INV, 11, 5);
 		
-		//saving the frame from the webcam
-		imwrite("test.jpg", gray);
+		//saving the transformed image
+		imwrite("test.jpg", thresh);
 		PIX *pixs = pixRead("test.jpg");
 		//This will send an image for tesseract to extract the text off of it 
 		myOCR->SetImage(pixs);
 		char *text;
 		text = myOCR->GetUTF8Text();
 		pixFreeData(pixs);
-		//print the text from the image to the counsle 
+		//print the text from the image to the console 
 		std::cout << text << std::endl;
 		//this will display the webcam to the user
-		
+
 		imshow("cam", cameraFrame);
     }
 
