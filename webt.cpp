@@ -36,6 +36,7 @@ int main() {
 		text = myOCR->GetUTF8Text();
 		//print the text from the image to the counsle 
 		std::cout << text << std::endl;
+        std::cout << "------------------------------------------------" << std::endl;
 		//this will display the webcam to the user
 		imshow("cam", cameraFrame);
     }
