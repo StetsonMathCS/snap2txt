@@ -1,14 +1,21 @@
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv2/imgproc/imgproc.hpp>
-#include<tesseract/baseapi.h>
-#include<tesseract/strngs.h>
+
+#ifdef WINDOWS
+  #include<tesseract/api/baseapi.h>
+  #include<tesseract/ccutil/strngs.h>
+#else
+  #include<tesseract/baseapi.h>
+  #include<tesseract/strngs.h>
+#endif
+
 #include<leptonica/allheaders.h>
 
 #include<iostream>
 #include<sstream>
 
 using namespace std;
-int imageTrans() {
+int main() {
     
     cv::VideoCapture camera(0);
     if(!camera.isOpened()) return -1;
