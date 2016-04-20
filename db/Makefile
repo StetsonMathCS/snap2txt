@@ -1,10 +1,10 @@
-all: main
+all: database
 
-main: main.o sqlite3.o
-	g++ -lpthread -ldl -o main main.o sqlite3.o
+database: database.o sqlite3.o
+	g++ -lpthread -ldl -o database database.o sqlite3.o
 
-main.o: main.cpp sqlite3.h
-	g++ -c main.cpp
+database.o: database.cpp sqlite3.h
+	g++ -c database.cpp
 
 # Use gcc to compile this C code
 sqlite3.o: sqlite3.h sqlite3.c
