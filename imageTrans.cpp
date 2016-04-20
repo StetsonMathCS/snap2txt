@@ -8,7 +8,7 @@
 #include<sstream>
 
 using namespace std;
-int imageTrans() {
+int main() {
     
     cv::VideoCapture camera(0);
     if(!camera.isOpened()) return -1;
