@@ -19,11 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Example2KimKathryn.cpp" />
-    <ClCompile Include="Example3KimKathryn.cpp" />
-    <ClCompile Include="ExampleKimKathryn.cpp" />
-    <ClCompile Include="GenData.cpp" />
-    <ClCompile Include="TrainAndTest.cpp" />
+    <ClCompile Include="imageTrans.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CA4E76D8-33A0-47C8-B2BF-BA2D8DFAF9F3}</ProjectGuid>
@@ -108,13 +104,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(OPENCV_DIR)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\wordrec;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\viewer;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\training;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\textord;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\testing;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\tessdata;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\opencl;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\neural_networks;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\java;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\doc;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\dict;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\cutil;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\cube;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\contrib;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\classify;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\ccstruct;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\ccmain;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\api;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\ccutil;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\include;$(OPENCV_DIR)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(OPENCV_DIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_calib3d310d.lib;opencv_core310d.lib;opencv_features2d310d.lib;opencv_flann310d.lib;opencv_highgui310d.lib;opencv_imgcodecs310d.lib;opencv_imgproc310d.lib;opencv_ml310d.lib;opencv_objdetect310d.lib;opencv_photo310d.lib;opencv_shape310d.lib;opencv_stitching310d.lib;opencv_superres310d.lib;opencv_ts310d.lib;opencv_video310d.lib;opencv_videoio310d.lib;opencv_videostab310d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\lib\x64;$(OPENCV_DIR)\lib;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\vs2013\bin\x64\DLL_Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_calib3d310d.lib;opencv_core310d.lib;opencv_features2d310d.lib;opencv_flann310d.lib;opencv_highgui310d.lib;opencv_imgcodecs310d.lib;opencv_imgproc310d.lib;opencv_ml310d.lib;opencv_objdetect310d.lib;opencv_photo310d.lib;opencv_shape310d.lib;opencv_stitching310d.lib;opencv_superres310d.lib;opencv_ts310d.lib;opencv_video310d.lib;opencv_videoio310d.lib;opencv_videostab310d.lib;libtesseract304d.lib;liblept171d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
