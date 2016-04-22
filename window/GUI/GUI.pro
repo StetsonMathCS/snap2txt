@@ -1,20 +1,25 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2016-04-08T13:38:11
+# Project created by QtCreator 2016-04-11T13:54:59
 #
 #-------------------------------------------------
 
 QT       += core gui
+QT       += multimediawidgets
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = window
+TARGET = GUI
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES +=\
+        mainwindow.cpp \
+    main.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += \
+    mainwindow.h \
+    camera.h
 
 FORMS    += mainwindow.ui
