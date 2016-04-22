@@ -3,7 +3,7 @@ all: database
 database: database.o sqlite3.o
 	g++ -lpthread -ldl -o database database.o sqlite3.o
 
-database.o: database.cpp sqlite3.h
+database.o: database.cpp database.h sqlite3.h
 	g++ -c database.cpp
 
 # Use gcc to compile this C code

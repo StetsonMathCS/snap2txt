@@ -16,9 +16,9 @@ class Database
 		
 	public:
 		//Constructor creates database
-		Database(const unsigned char *dbfile);
+		Database(const char *dbfile);
 		//Insert values into database
-		void insert(const unsigned char *filename, const unsigned char *extractedText, const unsigned char *date);
+		void insert(const char *filename, const char *extractedText, const char *date);
 		//Closes database
 		void close();
 		

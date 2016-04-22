@@ -6,14 +6,14 @@
 #include "database.h"
 using namespace std;
 
-Database::Database(const unsigned char *dbfile){
+Database::Database(const char *dbfile){
 	int retval; // for checking function return values, for error codes
 
 	// open the database, creating the file if it doesn't exist
 	retval = sqlite3_open(dbfile, &db);
 	if(retval != 0)
 	{
-		cout << "Cannot open " dbfile ": " << sqlite3_errcode(db) << endl;
+		cout << "Cannot open " << dbfile << ": " << sqlite3_errcode(db) << endl;
 		exit(1);
 	}
 	cout << "Successfully opened." << endl;
@@ -28,12 +28,13 @@ Database::Database(const unsigned char *dbfile){
 	}
 }
 
-void Database::insert(const unsigned char *fName, const unsigned char *eText, const unsigned char *fDate){
+void Database::insert(const char *fName, const char *eText, const  char *fDate){
 	int retval;
+	char* errmsg;
 
 	retval = sqlite3_exec(db, "INSERT OR REPLACE INTO snaps VALUES (\"cats\", \"hello\", \"April 15, 2016\"), (\"dogs\", \"GoodBye\", \"May 9, 2016\");", NULL, NULL, &errmsg);
 	
-	char *errmsg;	
+		
 	if(retval != SQLITE_OK)
 	{
 		cout << "Error in previous command: " << errmsg << endl;
