@@ -5,7 +5,9 @@
 #include "sqlite3.h"
 #include <cstdlib>
 #include <cstring>
+#ifndef WINDOWS
 #include <dlfcn.h>
+#endif
 using namespace std;
 
 

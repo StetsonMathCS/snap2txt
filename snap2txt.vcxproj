@@ -19,7 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="db\database.cpp" />
+    <ClCompile Include="db\sqlite3.c" />
     <ClCompile Include="imageTrans.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="db\database.h" />
+    <ClInclude Include="db\sqlite3.h" />
+    <ClInclude Include="db\sqlite3ext.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CA4E76D8-33A0-47C8-B2BF-BA2D8DFAF9F3}</ProjectGuid>
@@ -103,7 +110,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\wordrec;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\viewer;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\training;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\textord;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\testing;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\tessdata;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\opencl;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\neural_networks;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\java;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\doc;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\dict;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\cutil;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\cube;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\contrib;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\classify;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\ccstruct;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\ccmain;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\api;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\tesseract\ccutil;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build;C:\Users\ksarullo\Documents\snap2txt\Tesseract-Build\include;$(OPENCV_DIR)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>

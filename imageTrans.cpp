@@ -1,30 +1,37 @@
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv2/imgproc/imgproc.hpp>
+
+#ifdef WINDOWS
+#include<tesseract/api/baseapi.h>
+#include<tesseract/ccutil/strngs.h>
+#else
 #include<tesseract/baseapi.h>
 #include<tesseract/strngs.h>
+#endif
+
 #include<leptonica/allheaders.h>
 
 #include<iostream>
 #include<sstream>
 
 using namespace std;
-int imageTrans() {
-    
-    cv::VideoCapture camera(0);
-    if(!camera.isOpened()) return -1;
+int main() {
+
+	cv::VideoCapture camera(0);
+	if (!camera.isOpened()) return -1;
 	//Making the tesseract object
 	tesseract::TessBaseAPI *myOCR = new tesseract::TessBaseAPI();
 	const char* lan = "eng";
-	
+
 	//Leave the webcam open until a key press
-	if (myOCR->Init(NULL, lan, tesseract::OEM_DEFAULT)) 
+	if (myOCR->Init(NULL, lan, tesseract::OEM_DEFAULT))
 	{
-	 std::cout << "error" << std::endl;
-	 return -1;
+		std::cout << "error" << std::endl;
+		return -1;
 	}
-    while(1)
-    {
-        if(cv::waitKey(30) >= 0) break;
+	while (1)
+	{
+		if (cv::waitKey(30) >= 0) break;
 		cv::Mat cameraFrame;
 		camera >> cameraFrame;
 		//Creates a Grayscale matrix
@@ -33,7 +40,7 @@ int imageTrans() {
 		//Changes Grayscale matrix black/white
 		cv::Mat thresh;
 		cv::adaptiveThreshold(gray, thresh, 255, cv::ADAPTIVE_THRESH_MEAN_C, cv::THRESH_BINARY_INV, 11, 5);
-		
+
 		//saving the transformed image
 		imwrite("test.jpg", thresh);
 		PIX *pixs = pixRead("test.jpg");
@@ -47,9 +54,10 @@ int imageTrans() {
 		//this will display the webcam to the user
 
 		imshow("cam", cameraFrame);
-    }
+	}
 
-    cv::waitKey(0);                                        
+	cv::waitKey(0);
 
-    return(0);
+	return(0);
 }
+
