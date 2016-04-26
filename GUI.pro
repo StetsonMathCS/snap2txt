@@ -19,7 +19,7 @@ SOURCES +=\
     main.cpp
 
 HEADERS  += \
-    mainwindow.h \
-    camera.h
+    camera.h \
+    mainwindow.h
 
 FORMS    += mainwindow.ui
