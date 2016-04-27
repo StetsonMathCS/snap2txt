@@ -10,9 +10,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->plainTextEdit->setStyleSheet("background: url(snap2txtscaled2.jpg)");
  //------------------ START CAMERA -----------------
     ui->stackedWidget->setCurrentIndex(1);
-    ui->scrollArea->setWidget(viewfinder);
-    camera->setViewfinder(viewfinder);
-    camera->start();
+    //ui->scrollArea->setWidget(viewfinder);
+   // camera->setViewfinder(viewfinder);
+    //camera->start();
 //camera will be stopped when snap2txt button is pressed
 }
 
@@ -71,7 +71,7 @@ void MainWindow::on_pushButton_3_clicked()
  */
 void MainWindow::on_pushButton_clicked()
 {
-    camera->stop(); //stop camera [can be removed for multiple pictures, but showing image will be necessary
+    //camera->stop(); //stop camera [can be removed for multiple pictures, but showing image will be necessary
     ui->plainTextEdit->setStyleSheet("background-color: white"); //removes image from background
     ui->plainTextEdit->insertPlainText(MainWindow::getText());
 

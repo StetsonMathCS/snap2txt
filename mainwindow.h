@@ -2,15 +2,15 @@
 #define MAINWINDOW_H
 #include <iostream>
 #include <QApplication>
-#include <QCamera>
-#include <QCameraImageCapture>
+//#include <QCamera>
+//#include <QCameraImageCapture>
 #include <QMainWindow>
-#include <QMediaService>
-#include <QMediaRecorder>
-#include <QCameraViewfinder>
-#include <QCamera>
-#include <QCameraInfo>
-#include <QMediaMetaData>
+//#include <QMediaService>
+//#include <QMediaRecorder>
+//#include <QCameraViewfinder>
+//#include <QCamera>
+//#include <QCameraInfo>
+//#include <QMediaMetaData>
 #include <QtWidgets>
 #include <QWidget>
 using namespace std;
@@ -24,8 +24,8 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    QCamera *camera=new QCamera(this);
-    QCameraViewfinder *viewfinder = new QCameraViewfinder(this);
+  //  QCamera *camera=new QCamera(this);
+   // QCameraViewfinder *viewfinder = new QCameraViewfinder(this);
     //create objects here
 
     explicit MainWindow(QWidget *parent = 0);
