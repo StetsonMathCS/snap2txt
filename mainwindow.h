@@ -30,14 +30,14 @@ public:
 
     explicit MainWindow(QWidget *parent = 0);
     QString getText();
-    QPixmap getImage();
+    //QPixmap getImage();
     ~MainWindow();
 
 private slots:
     void on_pushButton_clicked();
     void on_pushButton_4_clicked();
 
-    void on_plainTextEdit_destroyed();
+    //void on_plainTextEdit_destroyed();
 
     void on_pushButton_3_clicked();
 
